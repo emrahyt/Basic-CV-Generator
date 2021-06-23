@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import MainContainer from './Components/MainContainer'
+import FirstSection from './Components/Header/FirstSection'
+import ContactSection from './Components/Contact/ContactSection'
+import Main from './Components/Main/Main'
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles(() => ({
+  root:{
+    width: '100%',
+    height: '100%',
+    padding: '30px 0px'
+  }
+}))
 
 function App() {
+  const classes = useStyles()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <MainContainer>
+        <FirstSection />
+        <ContactSection />
+        <Main />
+      </MainContainer>
     </div>
   );
 }
